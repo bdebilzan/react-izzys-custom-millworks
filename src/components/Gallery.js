@@ -6,28 +6,13 @@ import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
 function Gallery() {
   const totalImages = 138;
-  const [visibleImages, setVisibleImages] = useState([]);
-  const [loadedCount, setLoadedCount] = useState(10);
+  const isMobile = window.innerWidth <= 768;
+  const maxImages = isMobile ? 30 : totalImages;
   const [progress, setProgress] = useState(0);
 
   useEffect(() => {
-    const loadMoreImages = () => {
-      if (loadedCount < totalImages) {
-        setTimeout(() => {
-          setLoadedCount((prev) => Math.min(prev + 10, totalImages));
-        }, 500);
-      }
-    };
-
-    loadMoreImages();
-  }, [progress]);
-
-  useEffect(() => {
     setVisibleImages(
-      Array.from(
-        { length: loadedCount },
-        (_, i) => `/images/image${i + 1}.webp`
-      )
+      Array.from({ length: maxImages }, (_, i) => `/images/image${i + 1}.webp`)
     );
   }, [loadedCount]);
 
@@ -59,7 +44,7 @@ function Gallery() {
           )
         }
       >
-        {visibleImages.map((src, index) => (
+        {images.map((src, index) => (
           <div className="carousel-slide" key={index}>
             <img
               src={src}
