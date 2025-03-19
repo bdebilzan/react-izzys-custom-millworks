@@ -1,22 +1,19 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import "../styles/Gallery.css";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
 function Gallery() {
-  const totalImages = 138;
-  const isMobile = window.innerWidth <= 768;
-  const maxImages = isMobile ? 30 : totalImages;
   const [progress, setProgress] = useState(0);
 
   const images = Array.from(
-    { length: maxImages },
-    (_, i) => `/images/image${i + 1}.webp`
+    { length: 28 },
+    (_, i) => `/images/image${i + 1}.jpg`
   );
 
   const handleSlideChange = (index) => {
-    setProgress(((index + 1) / totalImages) * 100);
+    setProgress(((index + 1) / 28) * 100);
   };
 
   return (

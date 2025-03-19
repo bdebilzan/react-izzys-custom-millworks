@@ -4,7 +4,7 @@ function Hero() {
   return (
     <div className="hero">
       <img
-        src="/images/image79.webp"
+        src="/images/image1.jpg"
         alt="Custom Cabinetry"
         className="hero-image"
       />
