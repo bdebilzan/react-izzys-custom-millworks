@@ -33,7 +33,7 @@ function Gallery() {
       >
         {images.map((src, index) => (
           <div className="carousel-slide" key={index}>
-            <img src={src} alt={`Gallery image ${index + 1}`} loading="lazy" />
+            <img src={src} alt={`Gallery ${index + 1}`} loading="lazy" />
           </div>
         ))}
       </Carousel>
