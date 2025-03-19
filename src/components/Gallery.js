@@ -10,11 +10,10 @@ function Gallery() {
   const maxImages = isMobile ? 30 : totalImages;
   const [progress, setProgress] = useState(0);
 
-  useEffect(() => {
-    setVisibleImages(
-      Array.from({ length: maxImages }, (_, i) => `/images/image${i + 1}.webp`)
-    );
-  }, [loadedCount]);
+  const images = Array.from(
+    { length: maxImages },
+    (_, i) => `/images/image${i + 1}.webp`
+  );
 
   const handleSlideChange = (index) => {
     setProgress(((index + 1) / totalImages) * 100);
