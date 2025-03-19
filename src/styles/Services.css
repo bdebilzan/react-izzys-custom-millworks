@@ -1,0 +1,19 @@
+.services {
+  padding: 50px;
+  text-align: center;
+}
+
+.service-list {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.service-item {
+  width: 30%;
+  padding: 20px;
+  background: #f8f8f8;
+  border-radius: 10px;
+  font-size: 12px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}

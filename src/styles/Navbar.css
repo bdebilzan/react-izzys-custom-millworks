@@ -1,0 +1,39 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background: #f4f3f1;
+}
+
+.logo img {
+  height: 25px;
+  width: auto;
+  display: block;
+}
+
+.nav-links a {
+  font-size: 12px;
+  font-weight: 600;
+  margin: 0 15px;
+  text-decoration: none;
+  color: black;
+}
+
+.nav-links a:hover {
+  text-decoration: underline;
+}
+
+.cta-button {
+  background: #85948c;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.cta-button:hover {
+  background: #77847d;
+}
