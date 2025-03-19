@@ -42,7 +42,10 @@ function Contact() {
   return (
     <div className="contact">
       <h2>Contact</h2>
-
+      <p className="free-quote-text">
+        Contact me today for a **free quote** on your custom woodworking
+        project!
+      </p>
       <div className="contact-details">
         <p>
           <i className="fas fa-map-marker-alt"></i> 95210 Overseas Highway, Key

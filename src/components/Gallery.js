@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import "../styles/Gallery.css";
@@ -5,9 +6,15 @@ import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
 function Gallery() {
   const images = Array.from(
-    { length: 18 },
+    { length: 143 },
     (_, i) => `/images/image${i + 1}.jpg`
   );
+  const [progress, setProgress] = useState(0);
+
+  const handleSlideChange = (index) => {
+    const percentage = ((index + 1) / images.length) * 100;
+    setProgress(percentage);
+  };
 
   return (
     <div className="gallery">
@@ -16,6 +23,8 @@ function Gallery() {
         infiniteLoop
         autoPlay
         showStatus={false}
+        showIndicators={false}
+        onChange={handleSlideChange}
         renderArrowPrev={(onClickHandler, hasPrev) =>
           hasPrev && (
             <button className="carousel-arrow left" onClick={onClickHandler}>
@@ -37,6 +46,10 @@ function Gallery() {
           </div>
         ))}
       </Carousel>
+
+      <div className="carousel-progress">
+        <div className="progress-bar" style={{ width: `${progress}%` }}></div>
+      </div>
     </div>
   );
 }

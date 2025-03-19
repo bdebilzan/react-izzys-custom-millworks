@@ -19,6 +19,14 @@
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 }
 
+.free-quote-text {
+  font-size: 16px;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
 .contact input,
 .contact textarea {
   width: 100%;

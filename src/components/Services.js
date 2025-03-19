@@ -7,16 +7,24 @@ function Services() {
       <div className="service-list">
         <div className="service-item">
           <h3>Cabinetry Design</h3>
-          <p>Transforming your ideas into timeless cabinetry pieces.</p>
+          <p>
+            Transforming your ideas into timeless cabinetry pieces. Specializing
+            in custom vanities, outdoor bar and grill areas, cabinets, finish
+            carpentry, custom closets, and more.
+          </p>
         </div>
         <div className="service-item">
           <h3>Custom Creation</h3>
-          <p>Handcrafted furniture that blends aesthetics and functionality.</p>
+          <p>
+            Handcrafted cabinets and furniture locally in Key Largo that blend
+            aesthetics and functionality. Featuring premium domestic lumber and
+            plywood, paired with high-quality hardware.
+          </p>
         </div>
         <div className="service-item">
           <h3>Residential and Commercial Installation</h3>
           <p>
-            Elevating your home and business spaces with exquisite custom work.
+            Elevating your home or business spaces with exquisite custom work.
           </p>
         </div>
       </div>
