@@ -29,3 +29,36 @@
   text-align: center;
   z-index: 1;
 }
+
+@media screen and (max-width: 1024px) {
+  .hero {
+    height: 70vh;
+  }
+  .hero-overlay {
+    font-size: 1.8rem;
+    top: 22%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .hero {
+    height: 60vh;
+  }
+  .hero-overlay {
+    font-size: 1.5rem;
+    padding: 15px;
+    top: 22%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .hero {
+    height: 50vh;
+  }
+  .hero-overlay {
+    font-size: 12px;
+    padding: 10px;
+    max-width: 300px;
+    top: 10%;
+  }
+}

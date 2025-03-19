@@ -7,7 +7,7 @@ import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 function Gallery() {
   const images = Array.from(
     { length: 143 },
-    (_, i) => `/images/image${i + 1}.jpg`
+    (_, i) => `${process.env.PUBLIC_URL}/images/image${i + 1}.webp`
   );
   const [progress, setProgress] = useState(0);
 
