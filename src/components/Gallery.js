@@ -8,12 +8,12 @@ function Gallery() {
   const [progress, setProgress] = useState(0);
 
   const images = Array.from(
-    { length: 28 },
+    { length: 24 },
     (_, i) => `/images/image${i + 1}.jpg`
   );
 
   const handleSlideChange = (index) => {
-    setProgress(((index + 1) / 28) * 100);
+    setProgress(((index + 1) / 24) * 100);
   };
 
   return (
@@ -45,7 +45,6 @@ function Gallery() {
             <img
               src={src}
               alt={`Gallery ${index + 1}`}
-              loading="lazy"
               className="carousel-image"
             />
           </div>
