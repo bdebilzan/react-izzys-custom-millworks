@@ -42,7 +42,13 @@ function Gallery() {
       >
         {images.map((src, index) => (
           <div className="carousel-slide" key={index}>
-            <img src={src} alt={`Gallery ${index + 1}`} loading="lazy" />
+            <img
+              src={src}
+              alt={`Gallery ${index + 1}`}
+              loading="lazy"
+              style={{ visibility: "hidden" }}
+              onLoad={(e) => (e.target.style.visibility = "visible")}
+            />
           </div>
         ))}
       </Carousel>
