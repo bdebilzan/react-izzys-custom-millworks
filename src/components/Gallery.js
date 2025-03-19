@@ -1,19 +1,38 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import "../styles/Gallery.css";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
 function Gallery() {
-  const images = Array.from(
-    { length: 143 },
-    (_, i) => `${process.env.PUBLIC_URL}/images/image${i + 1}.webp`
-  );
+  const totalImages = 138;
+  const [visibleImages, setVisibleImages] = useState([]);
+  const [loadedCount, setLoadedCount] = useState(10);
   const [progress, setProgress] = useState(0);
 
+  useEffect(() => {
+    const loadMoreImages = () => {
+      if (loadedCount < totalImages) {
+        setTimeout(() => {
+          setLoadedCount((prev) => Math.min(prev + 10, totalImages));
+        }, 500);
+      }
+    };
+
+    loadMoreImages();
+  }, [progress]);
+
+  useEffect(() => {
+    setVisibleImages(
+      Array.from(
+        { length: loadedCount },
+        (_, i) => `/images/image${i + 1}.webp`
+      )
+    );
+  }, [loadedCount]);
+
   const handleSlideChange = (index) => {
-    const percentage = ((index + 1) / images.length) * 100;
-    setProgress(percentage);
+    setProgress(((index + 1) / totalImages) * 100);
   };
 
   return (
@@ -40,14 +59,13 @@ function Gallery() {
           )
         }
       >
-        {images.map((src, index) => (
+        {visibleImages.map((src, index) => (
           <div className="carousel-slide" key={index}>
             <img
               src={src}
               alt={`Gallery ${index + 1}`}
               loading="lazy"
-              style={{ visibility: "hidden" }}
-              onLoad={(e) => (e.target.style.visibility = "visible")}
+              className="carousel-image"
             />
           </div>
         ))}
